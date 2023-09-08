@@ -4,7 +4,7 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - develop
 
 # 建立一個 job
 jobs:
