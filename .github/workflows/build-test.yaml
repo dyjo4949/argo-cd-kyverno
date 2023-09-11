@@ -3,17 +3,17 @@ name: CI
 on:
   pull_request:
     branches: [ develop ]
-
+  schedule:
+    - cron: "0 */8 * * *" # update every 8 hours
 jobs:
-  test:
+  update-gist:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v2
-      with:
-        node-version: 12.x
-    - name: Install package
-      run: cd app && yarn install
-    - name: Testing
-      run: cd app && yarn test
+      - uses: actions/checkout@v2
+      - name: Update gist
+        uses: kylemocode/medium-stat-box@master
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MEDIUM_USER_NAME: ${{ secrets.MEDIUM_USER_NAME }}
+          GIST_ID: ${{ secrets.GIST_ID }}
