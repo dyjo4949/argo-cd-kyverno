@@ -22,7 +22,11 @@ jobs:
         run: echo run run run job
 
       - name: Run a multi-line script
-        run: |
+        run:
           echo Add other actions to build,
           echo test, and deploy your project.
 
+      - name: Test ${{ secrets.name }}
+        run: echo secrets name
+        with:
+          API_SECRET: ${{ secrets.API_SECRET }}
