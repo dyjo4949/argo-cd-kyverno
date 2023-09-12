@@ -6,7 +6,12 @@
 # https://github.com/actions/labeler
 
 name: Labeler
-on: [pull_request_target]
+  push:
+    branches: [ "develop" ]
+    # Publish semver tags as releases.
+    tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ "develop" ]
 
 jobs:
   label:
