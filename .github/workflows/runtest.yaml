@@ -25,8 +25,3 @@ jobs:
         run:
           echo Add other actions to build,
           echo test, and deploy your project.
-
-      - name: Test ${{ secrets.name }}
-        run: echo secrets name
-        with:
-          API_SECRET: ${{ secrets.API_SECRET }}
