@@ -6,9 +6,9 @@ name: Run unit tests
 # This workflow is triggered on pushes to the repository.
 on:
   push:
-    branches: [develop]
+    branches: [ develop ]
   pull_request:
-    branches: [develop]
+    branches: [ develop ]
 
 # Jobs will run in parallel
 jobs:
