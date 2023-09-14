@@ -10,6 +10,9 @@ on:
   pull_request:
     branches: [ develop ]
 
+  workflow_dispatch:
+
+
 # Jobs will run in parallel
 jobs:
   run-unit-tests:
