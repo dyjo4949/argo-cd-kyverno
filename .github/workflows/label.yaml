@@ -25,4 +25,4 @@ jobs:
     steps:
     - uses: actions/labeler@v4
       with:
-        API_SECRET: "${{ secrets.API_SECRET }}"
+        repo-token: ${{ secrets.GITHUB_TOKEN }}

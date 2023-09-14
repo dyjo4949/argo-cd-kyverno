@@ -15,7 +15,7 @@ jobs:
   run-unit-tests:
     # This job runs on Linux
     runs-on: ubuntu-latest
-
+    environment: dev
     # Steps run synchronously (one after the other)
     steps:
       # Retrieve the codebase on the ubuntu machine.
@@ -29,6 +29,11 @@ jobs:
       - run: npm ci
       - name: Run unit tests
         run: npm test
+      - name: install npm
+        run: npm install
+      - name: try and build
+        run: npm run build
+
   coverage:
     runs-on: ubuntu-latest
     steps:
