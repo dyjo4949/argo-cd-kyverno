@@ -24,8 +24,10 @@ jobs:
         with:
           node-version: 16
           cache: 'npm'
-      - run: npm install
-      - name: Run unit tests
-        run: npm test
+          dependency-path: subdir/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - name: install npm
+        run: npm install
       - name: try and build
         run: npm run build
