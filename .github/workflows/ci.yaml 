@@ -15,8 +15,7 @@ on:
 
 # Jobs will run in parallel
 jobs:
-  run-unit-tests:
-    # This job runs on Linux
+  build:
     runs-on: ubuntu-latest
     environment: dev
     # Steps run synchronously (one after the other)
