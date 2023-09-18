@@ -1,4 +1,4 @@
-name: permissions
+name: token
 on:
   push:
     branches: [ develop ]
