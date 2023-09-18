@@ -26,17 +26,11 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm init -y
+          npm install axios
           npm install
+          rm -rf node_modules
+          rm -f package-lock.json
+          npm cache clean --force
+          npm ci
           npm run build --if-present
           npm run test --if-present
-
-      - name: Zip artifact for deployment
-        run: |
-          zip release.zip . -r
-
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-app
-          path: release.zip
-
