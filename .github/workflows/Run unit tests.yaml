@@ -32,4 +32,5 @@ jobs:
           rm -f package-lock.json
           npm cache clean --force
           npm install
-        #  npm run build --if-present
+          npm run build --if-present
+        #  ,https://bobbyhadz.com/blog/npm-err-code-enoent-syscall-open
