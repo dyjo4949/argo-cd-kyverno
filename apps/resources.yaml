@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: resources
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: dev
+    name: kind
+  project: default
+  source:
+    path: resources
+    repoURL: https://github.com/morey-tech/argo-cd-kyverno.git
+    targetRevision: main
+  syncPolicy:
+    # automated: {}
+    syncOptions:
+      - CreateNamespace=true

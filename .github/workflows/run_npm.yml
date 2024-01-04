@@ -1,0 +1,44 @@
+name: Run npm
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+# Allows running this workflow manually from the Actions tab
+  workflow_dispatch: #可以手動觸發action
+    types: completed #rebuild
+# repository_dispatch:
+
+# Jobs will run in parallel
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    if: ${{ success() }} #${{ github.event.workflow_run.conclusion == 'success' }}
+    environment: dev
+    # Steps run synchronously (one after the other)
+    steps:
+      # Retrieve the codebase on the ubuntu machine.
+      # if the codebase isn't required, this step can be skipped.
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - name: npm install, build, and test
+        run: |
+          npm init -y
+          npm install axios
+          npm install
+          rm -rf node_modules
+          rm -f package-lock.json
+          npm cache clean --force
+          npm install
+          npm run build --if-present
+        # https://bobbyhadz.com/blog/npm-err-code-enoent-syscall-open
+      
+      - name: Archive coverage results
+        uses: actions/upload-artifact@v3
+      # after executive action,process file can go for others
+        with:
+          name: coverage-report
+          path: coverage
