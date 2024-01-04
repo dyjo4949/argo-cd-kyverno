@@ -9,11 +9,9 @@ _Repo metadata_
 
 
 ## Documentation
-<div align="left">
 
 [![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](/docs/ "Go to project documentation")
 
-</div>
 TL;DR "JUST for Test"
 
 
