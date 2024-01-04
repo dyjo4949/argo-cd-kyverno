@@ -4,13 +4,12 @@ _Social buttons_
 
 _Repo metadata_
 
-
 [![GitHub tag](https://img.shields.io/github/tag/dyjo4949/argo-cd-kyverno?include_prereleases=&sort=semver&color=blue)](https://github.com/dyjo4949/argo-cd-kyverno/releases/)
 
 
 
 ## Documentation
-<div align="center">
+<div align="left">
 
 [![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](/docs/ "Go to project documentation")
 
