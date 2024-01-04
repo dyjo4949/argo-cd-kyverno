@@ -1,8 +1,6 @@
 _Social buttons_
 
 [![dyjo4949 - argo-cd-kyverno](https://img.shields.io/static/v1?label=dyjo4949&message=argo-cd-kyverno&color=blue&logo=github)](https://dyjo4949.github.io/argo-cd-kyverno/ "Go to GitHub repo")
-[![morey-tech](https://img.shields.io/github/forks/morey-tech/argo-cd-kyverno?style=social)](https://github.com/morey-tech/argo-cd-kyverno)
-
 
 _Repo metadata_
 
@@ -14,6 +12,8 @@ _Repo metadata_
 TL;DR "JUST for Test"
 
 Fork from htps://github.com/morey-tech/argo-cd-kyverno and add some my test 
+[![morey-tech](https://img.shields.io/github/forks/morey-tech/argo-cd-kyverno?style=social)](https://github.com/morey-tech/argo-cd-kyverno)
+
 
 
 
